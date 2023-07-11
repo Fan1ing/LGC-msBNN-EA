@@ -77,3 +77,6 @@ More parameter settings can be obtained in **a.m**, **E.m**, and **U.m**.
  **Logarithm of first-order hyperpolarizability(ln(β))**
 The neural networks used to predict ln(β) is composed of **two hidden layers**, with a number of neurons of **60,35**.  
 More parameter settings can be obtained in **beta.m**.
+# Data set
+In the **data.xlsx** file, from left to right are: 
+the structural formula of molecules (SMILES), first-order features, second-order features, first-order and second-order optical features.
