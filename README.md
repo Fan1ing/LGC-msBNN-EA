@@ -9,15 +9,16 @@ Here are the details about the code file.
 ## Code running conditions
 The code we use is run in matlab **R2021a** on **window 11**. 
 The matlab program used needs to download the **Neural Net Fitting** toolbox.
+
 #### Code runtime
-For the output of a target molecule, it only takes a few minutes.
+	For the output of target molecule, it only takes a few minutes.
 
 ## Code content
 
-Evolutionary algorithm Folder (EA)：
+**Evolutionary algorithm Folder (EA)：**
 
 |name |content |
-|     :---:     |     :---:     |
+|----------------|--------------------------------|
 |**main.m** | Main program of Evolutionary algorithm. |
 |**initpop.m** |Code for initializing the population.|
 |**binary2decimal.m**| Code for binary and Decimal conversion.|
@@ -30,16 +31,16 @@ Evolutionary algorithm Folder (EA)：
 | **beta.mat** | A trained model for predicting first-order hyperpolarizability |
 |**U.mat**|A trained model for predicting dipole moment.|
 | **E.mat**|A trained model for predicting HOMO-LUMO gap.|
-
 **Note**: All codes of Evolutionary algorithm should be placed in the **same folder** when used.
 
-Evolutionary algorithm Folder (EA)：
+**Neural network Folder (NN)：**
 |name |content |
-|     :---:     |     :---:     |
+|----------------|--------------------------------|
 | **a.m**|Bayesian neural network code for predicting polarizability.|
 |  **beta.m** | Bayesian neural network code for predicting first-order hyperpolarizability. |
 |**E.m**|Bayesian neural network code for predicting HOMO-LUMO gap.|
 | **U.m** |  Bayesian neural network code for predicting dipole moment. |
+
 # Model parameter
 
 ## Evolutionary algorithm
@@ -62,3 +63,17 @@ Of course, we can also set all features as variables and participate in the evol
 ### Selection Operator
 Here, we have chosen the **roulette wheel selection** for individual selection. 
 With this method, individuals whose fitness tends to zero only have a very low probability of being selected, which speeds up the search of molecular structure. Moreover, for individuals with relatively low fitness but potential, there is also a chance to be selected, which avoids premature convergence of the model.
+## Multi-stage Bayesian Neural Network
+### Calculation of second-order features
+**First order feature**: vector of the number of groups.
+**The second-order features** are all calculated from the **first-order  features**, and their calculation methods can be obtained in our article. 
+The weight vectors corresponding to different features can be viewed in **calobjvalue.m** and **main.m**.
+### First order optical features
+**polarizability(α)**、**dipole moment(μ)**、**HOMO-LUMO gap(ΔE)**
+The neural networks used to predict these three features are all composed of **two hidden layers**, with a number of neurons of **22,16**.  
+More parameter settings can be obtained in **a.m**, **E.m**, and **U.m**.
+
+### Second-order optical features
+ **Logarithm of first-order hyperpolarizability(ln(β))**
+The neural networks used to predict ln(β) is composed of **two hidden layers**, with a number of neurons of **60,35**.  
+More parameter settings can be obtained in **beta.m**.
