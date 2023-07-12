@@ -68,16 +68,16 @@ With this method, individuals whose fitness tends to zero only have a very low p
 **First order feature**: vector of the number of groups.
 **The second-order features** are all calculated from the **first-order  features**, and their calculation methods can be obtained in our article. 
 The weight vectors corresponding to different features can be viewed in **calobjvalue.m** and **main.m**.
-### First order optical features
+### First order optical property
 **polarizability(α)**、**dipole moment(μ)**、**HOMO-LUMO gap(ΔE)**
 The neural networks used to predict these three features are all composed of **two hidden layers**, with a number of neurons of **22,16**.  
 More parameter settings can be obtained in **a.m**, **E.m**, and **U.m**.
 
-### Second-order optical features
+### Second-order optical property
  **Logarithm of first-order hyperpolarizability(ln(β))**
 The neural networks used to predict ln(β) is composed of **two hidden layers**, with a number of neurons of **60,35**.  
 More parameter settings can be obtained in **beta.m**.
 # Data set
 In the **data.xlsx** file, from left to right are: 
 
-the structural formula of molecules (SMILES), first-order features, second-order features, first-order and second-order optical features.
+the structural formula of molecules (SMILES), first-order features, second-order features, first-order and second-order optical property.
