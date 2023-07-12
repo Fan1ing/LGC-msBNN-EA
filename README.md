@@ -57,7 +57,7 @@ Both of these crossover methods are within different functional groups.
 Mutation probability:**0.5**.
 
 ### Fitness function
-We choose to obtain high-performance molecules with a specified number of functional groups by adjusting the fitness function.The fitness function we designed is visible in **calobjvalue.m** and **main.m**.
+We choose to obtain high-performance molecules with a specified number of functional groups by adjusting the fitness function.The fitness function we designed is visible in **calobjvalue.m**.
 The vector of a certain group interval can be set as a fixed value and the fitness function can be calculated together with the vectors within other group intervals in the population. This way, different combinations can be obtained according to the needs.
 Of course, we can also set all features as variables and participate in the evolution of the population to obtain more molecules.
 ### Selection Operator
