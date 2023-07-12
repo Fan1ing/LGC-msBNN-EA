@@ -72,13 +72,19 @@ G_A10 = binary2decimal(pop (:,26:26));
 G_A11 = binary2decimal(pop (:,27:27));
 G_A12 = binary2decimal(pop (:,28:28));
 
+%Default group vectors participating in evolution.
 G_D = [G_D1,G_D2,G_D3,G_D4,G_D5,G_D6,G_D7];
 G_pai = [ G_pai1,G_pai2,G_pai3,G_pai4,G_pai5,G_pai6,G_pai7,G_pai8,G_pai9];
 G_A = [G_A1,G_A2,G_A3,G_A4,G_A5,G_A6,G_A7,G_A8,G_A9,G_A10,G_A11,G_A12];
+
+
+%Design target molecules using different groups as constants.
+
 %{
 G_D = [0,0,1,0,0,0,0];
 G_D = repmat(G_D,popsize, 1);
 %}
+
 G_A = [0,1,0,0,0,0,0,0,0,0,0,0];
 G_A = repmat(G_A,popsize, 1);
 
@@ -86,6 +92,7 @@ G_A = repmat(G_A,popsize, 1);
 G_pai = [0,2,0,0,0,0,0,0,0];
 G_pai = repmat(G_pai,popsize, 1);
 %}
+
 G_D_small = [0,0,0];
 G_D_small = repmat(G_D_small,popsize, 1);
 
@@ -93,6 +100,7 @@ G_D_small = repmat(G_D_small,popsize, 1);
 G_pai = [0,2,0,0,0,0,0,0,0];
 G_pai = repmat(G_pai,popsize, 1);
 %}
+
 G_D_pai = [1,0,0];
 G_D_pai = repmat(G_D_pai,popsize, 1);
 
@@ -102,6 +110,7 @@ G_pai_small = repmat(G_pai_small,popsize, 1);
 G_pai_A = [1,0];
 G_pai_A = repmat(G_pai_A,popsize, 1);
 
+%
 
 G = [G_D_small,G_D,G_D_pai,G_pai,G_pai_small,G_pai_A,G_A];
 
