@@ -81,5 +81,6 @@ More parameter settings can be obtained in **beta.m**.
 # Data set
 In the **data.xlsx** file, from left to right are: 
 the structural formula of molecules (SMILES), first-order features, second-order features, first-order and second-order optical features.
+
 In the **data.csv** file, from left to right are: 
 the structural formula of molecules (SMILES), third-order features，first-order features, second-order features, first-order and second-order optical features.（We have removed some duplicate molecules from the data.xlsx）
