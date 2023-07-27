@@ -31,6 +31,7 @@ The matlab program used needs to download the **Neural Net Fitting** toolbox.
 | **beta.mat** | A trained model for predicting first-order hyperpolarizability |
 |**U.mat**|A trained model for predicting dipole moment.|
 | **E.mat**|A trained model for predicting HOMO-LUMO gap.|
+
 **Note**: All codes of Evolutionary algorithm should be placed in the **same folder** when used.
 
 **Neural network Folder (NN)：**
