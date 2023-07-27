@@ -80,11 +80,6 @@ The neural networks used to predict ln(β) is composed of **two hidden layers**,
 More parameter settings can be obtained in **beta.m**.
 # Data set
 In the **data.xlsx** file, from left to right are: 
-
-<<<<<<< HEAD
 the structural formula of molecules (SMILES), first-order features, second-order features, first-order and second-order optical features.
-In the **data.xlsx** file, from left to right are: 
+In the **data.csv** file, from left to right are: 
 the structural formula of molecules (SMILES), third-order features，first-order features, second-order features, first-order and second-order optical features.（We have removed some duplicate molecules from the data.xlsx）
-=======
-the structural formula of molecules (SMILES), first-order features, second-order features, first-order and second-order optical property.
->>>>>>> b1a3cf7a329ceec34f3be290892ddcc38ba241c4
