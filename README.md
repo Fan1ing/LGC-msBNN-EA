@@ -40,7 +40,8 @@ The matlab program used needs to download the **Neural Net Fitting** toolbox.
 |  **beta.m** | Bayesian neural network code for predicting first-order hyperpolarizability. |
 |**E.m**|Bayesian neural network code for predicting HOMO-LUMO gap.|
 | **U.m** |  Bayesian neural network code for predicting dipole moment. |
-
+| **LGC_msBNN.m** |  A multi-stage Bayesian neural network code for predicting first-order hyperpolarizability. |
+| **cLGC_msBNN.m** |  A multi-stage Bayesian neural network code for predicting first-order hyperpolarizability. |
 # Model parameter
 
 ## Evolutionary algorithm
@@ -81,3 +82,5 @@ More parameter settings can be obtained in **beta.m**.
 In the **data.xlsx** file, from left to right are: 
 
 the structural formula of molecules (SMILES), first-order features, second-order features, first-order and second-order optical features.
+In the **data.xlsx** file, from left to right are: 
+the structural formula of molecules (SMILES), third-order features，first-order features, second-order features, first-order and second-order optical features.（We have removed some duplicate molecules from the data.xlsx）

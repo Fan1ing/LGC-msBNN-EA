@@ -19,16 +19,59 @@ while i<=100
     trainData = data(1:ind, 1:end); 
     testData = data(ind+1:end, 1:end);
      P_train = trainData(:,1:57);
-     T_train = trainData(:,61:61);
+     T_train_niu = trainData(:,58:58);
+     T_train_a = trainData(:,59:59);
+     T_train_E = trainData(:,60:60);
+     
+     
+     T_train_beta = trainData(:,61:61);
+     P_train_beta=trainData(:,1:60);
+     
+     
      P_test = testData(:,1:57);
      T_test = testData(:,61:61);
-     P_train = P_train';
-     T_train = T_train';
+     
+     
+     T_train_niu = T_train_niu';
+     T_train_a = T_train_a';
+     T_train_E = T_train_E';
+     T_train_beta=T_train_beta';
+     P_train_beta=P_train_beta';
+     P_train=P_train';
      P_test =  P_test';
      T_test = T_test';
-    net = feedforwardnet([22,12],'trainbr');
+     
+    net = feedforwardnet([22,16],'trainbr');
+    net.trainParam.epochs = 1000;
+    net.trainParam.goal = 2;
+    net.trainParam.mu = 0.001;
+    net = train(net,P_train,T_train_niu);
+    t_sim_niu = sim(net,P_test);
+     
+    net = feedforwardnet([22,16],'trainbr');
+    net.trainParam.epochs = 1000;
+    net.trainParam.goal = 1200;
+    net.trainParam.mu = 0.001;
+    net = train(net,P_train,T_train_a);
+    t_sim_a = sim(net,P_test);
+    
+    
+    net = feedforwardnet([22,16],'trainbr');
+    net.trainParam.epochs = 1000;
+    net.trainParam.goal = 0.012;
+    net.trainParam.mu = 0.001;
+    net = train(net,P_train,T_train_E);
+    t_sim_E = sim(net,P_test);
+    
+    P_test = [P_test;t_sim_niu;t_sim_a;t_sim_E];
+    
+    
+    P_train=P_train_beta;
+    T_train=T_train_beta;
+    
+    net = feedforwardnet([60,35],'trainbr');
     net.trainParam.epochs = 100;
-    net.trainParam.goal = 0.009;
+    net.trainParam.goal = 0.01;
     net.trainParam.mu = 0.001;
     net = train(net,P_train,T_train);
     t_sim_train = sim(net,P_train);
@@ -45,8 +88,8 @@ while i<=100
     mae = mean(abs(t_sim - T_test));
     mse = mean((abs((t_sim - T_test).^2)));
     mape = mean(abs((t_sim - T_test)./T_test));
-    fan=[mape_train;mape];
-    FAN = [FAN,fan];
+    %fan=[mape_train;mape];
+    %FAN = [FAN,fan];
     R2=R2+r2;
     R=R+r;
     MAE=(MAE+mae);
@@ -79,4 +122,5 @@ fprintf ('MSE_train=%d/', MSE_train);
 fprintf ('Mape_train=%d/',Mape_train);
 fprintf ('R_train=%d/',R_train);
 fprintf('R2_train=%d/',R2_train);
-%save('C:\Users\Arthas\Desktop\bet.mat','net'); 
+    
+    
