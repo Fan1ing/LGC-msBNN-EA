@@ -85,3 +85,74 @@ the structural formula of molecules (SMILES), first-order features, second-order
 
 In the **data-new.csv** file, from left to right are: 
 the structural formula of molecules (SMILES), third-order features，first-order features, second-order features, first-order and second-order optical features.（We have removed some duplicate molecules from the data.xlsx）
+
+## third-order features
+|name |Type |Description |Extended class |	
+|----------------|--------------------------------|----------------|--------------------------------|
+| BalabanJ         | Balaban's J index | Balaban's J value for a molecule,Chem.Phys. Lett. 89:399-404 (1982).                                                                                            | Topological descriptors   |
+| BertzCT          | BertzCT           | A topological index meant to quantify "complexity" of molecules.J. Am. Chem. Soc. 103:3599-601 (1981).                                                          | Topological descriptors   |
+| Chi0             | Chi indices       | From equations (1), (9) and (10) of Rev. Comp. Chem. vol 2, 367-422, (1991)                                                                                     | Connectivity descriptors  |
+| Chi1             | Chi indices       | From equations (1), (11) and (12) of Rev. Comp. Chem. vol 2, 367-422, (1991)                                                                                    | Connectivity descriptors  |
+| Chi0v            | Chi indices       | From equations (5), (9) and (10) of Rev. Comp. Chem. vol 2, 367-422, (1991)                                                                                     | Connectivity descriptors  |
+| Chi1v            | Chi indices       | From equations (5), (11) and (12) of Rev. Comp. Chem. vol 2, 367-422, (1991)                                                                                    | Connectivity descriptors  |
+| Chi2v            | Chi indices       | From equations (5), (15) and (16) of Rev. Comp. Chem. vol 2, 367-422, (1991)                                                                                    | Connectivity descriptors  |
+| Chi3v            | Chi indices       | From equations (5), (15) and (16) of Rev. Comp. Chem. vol 2, 367-422, (1991)                                                                                    | Connectivity descriptors  |
+| Chi4v            | Chi indices       | From equations (5), (15) and (16) of Rev. Comp. Chem. vol 2, 367-422, (1991)                                                                                    | Connectivity descriptors  |
+| Chi0n            | Chi indices       | Similar to Hall Kier Chi0v, but uses nVal instead of valence This makes a big difference after we get out of the first row.Rev. Comput. Chem. 2:367-422 (1991). | Connectivity descriptors  |
+| Chi1n            | Chi indices       | Similar to Hall Kier Chi1v, but uses nVal instead of valence.Rev. Comput. Chem. 2:367-422 (1991).                                                               | Connectivity descriptors  |
+| Chi2n            | Chi indices       | Similar to Hall Kier Chi2v, but uses nVal instead of valence This makes a big difference after we get out of the first row.Rev. Comput. Chem. 2:367-422 (1991). | Connectivity descriptors  |
+| Chi3n            | Chi indices       | Similar to Hall Kier Chi3v, but uses nVal instead of valence This makes a big difference after we get out of the first row.Rev. Comput. Chem. 2:367-422 (1991). | Connectivity descriptors  |
+| Chi4n            | Chi indices       | Similar to Hall Kier Chi4v, but uses nVal instead of valence.This makes a big difference after we get out of the first row.Rev. Comput. Chem. 2:367-422 (1991). | Connectivity descriptors  |
+| EState_VSA1      | EState_VSA        | MOE-type descriptors using EState indices and surface area contributions (developed at RD, not described in the CCG paper).                                     | E-state descriptors       |
+| EState_VSA2      | EState_VSA        | MOE-type descriptors using EState indices and surface area contributions (developed at RD, not described in the CCG paper).                                     | E-state descriptors       |
+| EState_VSA3      | EState_VSA        | MOE-type descriptors using EState indices and surface area contributions (developed at RD, not described in the CCG paper).                                     | E-state descriptors       |
+| EState_VSA4      | EState_VSA        | MOE-type descriptors using EState indices and surface area contributions (developed at RD, not described in the CCG paper).                                     | E-state descriptors       |
+| EState_VSA5      | EState_VSA        | MOE-type descriptors using EState indices and surface area contributions (developed at RD, not described in the CCG paper).                                     | E-state descriptors       |
+| EState_VSA6         | EState_VSA          | MOE-type descriptors using EState indices and surface area contributions (developed at RD, not described in the CCG paper).                        | E-state descriptors             |
+| EState_VSA7         | EState_VSA          | MOE-type descriptors using EState indices and surface area contributions (developed at RD, not described in the CCG paper).                        | E-state descriptors             |
+| EState_VSA8         | EState_VSA          | MOE-type descriptors using EState indices and surface area contributions (developed at RD, not described in the CCG paper).                        | E-state descriptors             |
+| EState_VSA9         | EState_VSA          | MOE-type descriptors using EState indices and surface area contributions (developed at RD, not described in the CCG paper).                        | E-state descriptors             |
+| EState_VSA10        | EState_VSA          | MOE-type descriptors using EState indices and surface area contributions (developed at RD, not described in the CCG paper).                        | E-state descriptors             |
+| FractionCSP3        | FractionCSP3        | The fraction of C atoms that are SP3 hybridized.                                                                                                   | Constitutional descriptors      |
+| HallKierAlpha       | HallKierAlpha       | The Hall-Kier alpha value for a molecule.Rev. Comput. Chem. 2:367-422 (1991).                                                                      | Topological descriptors         |
+| Ipc                 | Ipc                 | the information content of the coefficients of the characteristic polynomial of the adjacency matrix of a hydrogen-suppressed graph of a molecule. | Topological descriptors         |
+| Kappa1              | Kappa descriptors   | Hall-Kier Kappa1 value                                                                                                                             | Topological descriptors         |
+| Kappa2              | Kappa descriptors   | Hall-Kier Kappa2 value                                                                                                                             | Topological descriptors         |
+| Kappa3              | Kappa descriptors   | Hall-Kier Kappa2 value                                                                                                                             | Topological descriptors         |
+| LabuteASA           | LabuteASA           | Labute's Approximate Surface Area (ASA from MOE)                                                                                                   | MOE-type descriptors            |
+| MolMR               | MolMR               | Wildman-Crippen MR value.Wildman and Crippen JCICS 39:868-73 (1999)                                                                                | Molecular property descriptors  |
+| NumValenceElectrons | NumValenceElectrons | The number of valence electrons the molecule has                                                                                                   | Constitutional descriptors      |
+| PEOE_VSA1           | PEOE_VSA            | MOE Charge VSA Descriptor 1 (-inf < x < -0.30)                                                                                                     | MOE-type descriptors            |
+| PEOE_VSA2        | PEOE_VSA | MOE Charge VSA Descriptor 2 (-0.30 <= x < -0.25) | MOE-type descriptors  |
+| PEOE_VSA3        | PEOE_VSA | MOE Charge VSA Descriptor 3 (-0.25 <= x < -0.20) | MOE-type descriptors  |
+| PEOE_VSA4        | PEOE_VSA | MOE Charge VSA Descriptor 4 (-0.20 <= x < -0.15) | MOE-type descriptors  |
+| PEOE_VSA5        | PEOE_VSA | MOE Charge VSA Descriptor 5 (-0.15 <= x < -0.10) | MOE-type descriptors  |
+| PEOE_VSA6        | PEOE_VSA | MOE Charge VSA Descriptor 6 (-0.10 <= x < -0.05) | MOE-type descriptors  |
+| PEOE_VSA7        | PEOE_VSA | MOE Charge VSA Descriptor 7 (-0.05 <= x < 0.00)  | MOE-type descriptors  |
+| PEOE_VSA8        | PEOE_VSA | MOE Charge VSA Descriptor 8 (0.00 <= x < 0.05)   | MOE-type descriptors  |
+| PEOE_VSA9        | PEOE_VSA | MOE Charge VSA Descriptor 9 (0.05 <= x < 0.10)   | MOE-type descriptors  |
+| PEOE_VSA10       | PEOE_VSA | MOE Charge VSA Descriptor 10 (0.10 <= x < 0.15)  | MOE-type descriptors  |
+| PEOE_VSA11       | PEOE_VSA | MOE Charge VSA Descriptor 11 (0.15 <= x < 0.20)  | MOE-type descriptors  |
+| PEOE_VSA12       | PEOE_VSA | MOE Charge VSA Descriptor 12 (0.20 <= x < 0.25)  | MOE-type descriptors  |
+| PEOE_VSA13       | PEOE_VSA | MOE Charge VSA Descriptor 13 (0.25 <= x < 0.30)  | MOE-type descriptors  |
+| PEOE_VSA14       | PEOE_VSA | MOE Charge VSA Descriptor 14 (0.30 <= x < inf)   | MOE-type descriptors  |
+| SMR_VSA1         | SMR_VSA  | MOE MR VSA Descriptor 1 (-inf < x < 1.29)        | MOE-type descriptors  |
+| SMR_VSA2         | SMR_VSA  | MOE MR VSA Descriptor 2 (1.29 <= x < 1.82)       | MOE-type descriptors  |
+| SMR_VSA3            | SMR_VSA        | MOE MR VSA Descriptor 3 (1.82 <= x < 2.24)                                                                    | MOE-type descriptors     |
+| SMR_VSA4            | SMR_VSA        | MOE MR VSA Descriptor 4 (2.24 <= x < 2.45)                                                                    | MOE-type descriptors     |
+| SMR_VSA5            | SMR_VSA        | MOE MR VSA Descriptor 5 (2.45 <= x < 2.75)                                                                    | MOE-type descriptors     |
+| SMR_VSA6            | SMR_VSA        | MOE MR VSA Descriptor 6 (2.75 <= x < 3.05)                                                                    | MOE-type descriptors     |
+| SMR_VSA7            | SMR_VSA        | MOE MR VSA Descriptor 7 (3.05 <= x < 3.63)                                                                    | MOE-type descriptors     |
+| SMR_VSA9            | SMR_VSA        | MOE MR VSA Descriptor 9 (3.80 <= x < 4.00)                                                                    | MOE-type descriptors     |
+| SMR_VSA10           | SMR_VSA        | MOE MR VSA Descriptor 10 (4.00 <= x < inf)                                                                    | MOE-type descriptors     |
+| VSA_EState8         | VSA_Estate     | VSA EState Descriptor 8 (6.45 <= x < 7.00)                                                                    | E-state descriptors      |
+| VSA_EState9         | VSA_Estate     | VSA EState Descriptor 9 (7.00 <= x < 11.00)                                                                   | E-state descriptors      |
+| VSA_EState10        | VSA_Estate     | VSA EState Descriptor 10 (11.00 <= x < inf)                                                                   | E-state descriptors      |
+| MaxAbsEStateIndex   | Estate Index   | Returns a tuple of EState indices for the molecule, Reference: Hall, Mohney and Kier. JCICS _31_ 76-81 (1991) | Topological descriptors  |
+| MaxAbsPartialCharge | Partial Charge | Returns molecular charge descriptors                                                                          | Topological descriptors  |
+| MaxEStateIndex      | Estate Index   | Returns a tuple of EState indices for the molecule, Reference: Hall, Mohney and Kier. JCICS _31_ 76-81 (1991) | Topological descriptors  |
+| MaxPartialCharge    | Partial Charge | Returns molecular charge descriptors                                                                          | Topological descriptors  |
+| MinAbsEStateIndex   | Estate Index   | Returns a tuple of EState indices for the molecule, Reference: Hall, Mohney and Kier. JCICS _31_ 76-81 (1991) | Topological descriptors  |
+| MinAbsPartialCharge | Partial Charge | Returns molecular charge descriptors                                                                          | Topological descriptors  |
+| MinEStateIndex      | Estate Index   | Returns a tuple of EState indices for the molecule, Reference: Hall, Mohney and Kier. JCICS _31_ 76-81 (1991) | Topological descriptors  |
+| MinPartialCharge    | Partial Charge | Returns molecular charge descriptors                                                                          | Topological descriptors  |
