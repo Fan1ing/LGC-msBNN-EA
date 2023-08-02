@@ -87,6 +87,7 @@ In the **data-new.csv** file, from left to right are:
 the structural formula of molecules (SMILES), third-order features，first-order features, second-order features, first-order and second-order optical features.（We have removed some duplicate molecules from the data.xlsx）
 
 ## third-order features
+All features are calculated by RDKit, and the specific information of the features used is as follows：
 |name |Type |Description |Extended class |	
 |----------------|--------------------------------|----------------|--------------------------------|
 | BalabanJ         | Balaban's J index | Balaban's J value for a molecule,Chem.Phys. Lett. 89:399-404 (1982).                                                                                            | Topological descriptors   |
